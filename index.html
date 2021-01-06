@@ -4,22 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AngularJS Todo App</title>
+    <link rel="shortcut icon" href="#">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
 <body ng-app="ToDoList">
     <h1>Todos</h1>
     <div ng-controller="MainController">
-        <h2>Things I need to do:</h2>
-        <div ng-repeat="item in todo.list">
-            <li>{{ item }}</li>
-        </div>
+        <singlelist mylist="todo"></singlelist>
         <input type="text" ng-model="addToDo">
         <button ng-click="addItem(todo.list, addToDo)">Add to List</button>
 
-        <h2>Books I need to buy:</h2>
-        <div ng-repeat="book in books.list">
-            <li>{{ book }}</li>
-        </div>
+        <singlelist mylist="books"></singlelist>
         <input type="text" ng-model="addBook">
         <button ng-click="addItem(books.list, addBook)">Add to List</button>
     </div>
@@ -27,5 +22,7 @@
     <script src="js/app.js"></script>
     <!--Controllers-->
     <script src="js/controllers/MainController.js"></script>
+    <!--Directives-->
+    <script src="js/directives/singlelist.js"></script>
 </body>
 </html>
